@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS employees (
     jabatan_id SMALLINT UNSIGNED NOT NULL REFERENCES jabatans (id) ON UPDATE CASCADE,
     name VARCHAR(255) NOT NULL,
     nik CHAR(16) NOT NULL UNIQUE COMMENT 'Panjang nik 16 digit',
-    nip CHAR(18) NOT NULL UNIQUE COMMENT 'Panjang nip 18 digit',
+    nip CHAR(18) NOT NULL UNIQUE,
     is_active ENUM('0', '1') NOT NULL DEFAULT '0',
     deleted_at TIMESTAMP NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
